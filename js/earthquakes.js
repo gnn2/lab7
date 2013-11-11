@@ -41,11 +41,13 @@ function getQuakes(){
     //see data returned from:
     //https://soda.demo.socrata.com/resource/earthquakes.json?$$app_token=Hwu90cjqyFghuAWQgannew7Oi
 	
+	$('.message').html('Loading... <img src="img/loading.gif">');
+	 
 	 //set our global variable to the current set of quakes
 		//so we can reference it later in another event
 		gov.usgs.quakes = quakes;
-		var message = $('.message');
-		message.append('Displaying ' + quakes.length + ' earthquakes'); 
+		//var message = $('.message');
+		$('.message').html('Displaying ' + quakes.length + ' earthquakes'); 
 		
 		gov.usgs.quakesMap = new google.maps.Map($('.map-container')[0], {
 		center: new google.maps.LatLng(0,0),        //centered on 0/0
